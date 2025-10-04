@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Slides Portfolio"
+  navbar:
+    left:
+      - text: "Slides"
+        href: slides.html
+
+format:
+  revealjs:
+    theme: white
+    transition: fade
+    slide-number: true
+    hash: true
