@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROOT Open Projects</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #326096ff;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        padding: 40px 20px 20px 20px;
+    }
+
+    header h1 {
+        font-size: 3em;
+        margin-bottom: 0.3em;
+    }
+
+    header p {
+        font-size: 1.2em;
+        margin-top: 0;
+    }
+
+    #search-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    #search-input {
+        padding: 10px 15px;
+        font-size: 1em;
+        width: 300px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 90%;
+        margin: 0 auto 50px auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.4s ease;
+    }
+
+    .project-card {
+        flex: 0 0 30%;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 20px;
+        box-sizing: border-box;
+        min-height: 300px;
+        transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+        transform: scale(1.03);
+    }
+
+    .project-card h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+        color: #FFD700;
+    }
+
+    .project-meta p {
+        font-size: 0.85em;
+        margin: 0.3em 0;
+    }
+
+    .project-card p {
+        font-size: 0.9em;
+        line-height: 1.4em;
+        margin: 0.5em 0;
+    }
+
+    .skill-badge {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #FFFFFF;
+        padding: 4px 10px;
+        border-radius: 12px;
+        margin-right: 6px;
+        margin-bottom: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.3);
+        border: none;
+        color: white;
+        font-size: 2em;
+        padding: 0 10px;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .carousel-btn.left {
+        left: 10px;
+    }
+
+    .carousel-btn.right {
+        right: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    footer img.root-logo {
+        height: 40px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    footer img.ep-logo {
+        height: 60px; 
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>ROOT Open Projects</h1>
+    <p>Opportunities for collaboration and contributions</p>
+</header>
+
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Search by keyword (e.g., Python, AI, IO)" onkeyup="filterProjects()">
+</div>
+
+<div class="carousel-container">
+    <button class="carousel-btn left" onclick="scrollCarousel(-1)">❮</button>
+
+    <div class="carousel" id="carousel">
+        <div class="project-card">
+            <h2>ROOT Project 1</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Jane Doe</p>
+                <p><strong>Target:</strong> Summer Student</p>
+                <p><strong>ROOT Areas:</strong> Python Interface, Data Analysis</p>
+                <p><strong>Duration:</strong> 3 months</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Statistics</span>
+                <span class="skill-badge">Data Visualization</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>ROOT Project 2</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> John Smith</p>
+                <p><strong>Target:</strong> Master Thesis</p>
+                <p><strong>ROOT Areas:</strong> I/O, Continuous Integration</p>
+                <p><strong>Duration:</strong> 6 months</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">C++</span>
+                <span class="skill-badge">HTTP</span>
+                <span class="skill-badge">CI Systems</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>ROOT Project 3</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Jean Dupont</p>
+                <p><strong>Target:</strong> GSoC Student</p>
+                <p><strong>ROOT Areas:</strong> Machine Learning and AI, Visualisation and Graphics</p>
+                <p><strong>Duration:</strong> 3 months</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Graphics Libraries</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>ROOT Project 4</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Alice Martin</p>
+                <p><strong>Target:</strong> Bachelor Thesis</p>
+                <p><strong>ROOT Areas:</strong> Documentation, Teaching</p>
+                <p><strong>Duration:</strong> 1 month</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">Writing</span>
+                <span class="skill-badge">Python</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>ROOT Project 5</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Bob Lee</p>
+                <p><strong>Target:</strong> CERN Trainee</p>
+                <p><strong>ROOT Areas:</strong> Distributed Systems</p>
+                <p><strong>Duration:</strong> 6 months</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">Networking</span>
+                <span class="skill-badge">C++</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>ROOT Project 6</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Carol Smith</p>
+                <p><strong>Target:</strong> PhD</p>
+                <p><strong>ROOT Areas:</strong> Machine Learning, Data Analysis</p>
+                <p><strong>Duration:</strong> 3 years</p>
+            </div>
+            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">ML</span>
+                <span class="skill-badge">Statistics</span>
+            </p>
+        </div>
+
+    </div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(1)">❯</button>
+</div>
+
+<footer>
+    <img src="assets/images/root_logo.png" alt="ROOT Logo"  style= "height: 30px;" class="root-logo">
+    <img src="assets/images/ep_sft_logo.png" alt="EP-SFT Logo"  style= "height: 50px;" class="ep-logo">
+    <span>ROOT Open Projects | 2025</span>
+</footer>
+
+<script>
+let currentIndex = 0;
+function scrollCarousel(direction) {
+    const carousel = document.getElementById('carousel');
+    const cardWidth = document.querySelector('.project-card').offsetWidth + 20; // width + gap
+    const visibleCards = 3;
+    const totalCards = document.querySelectorAll('.project-card').length;
+
+    currentIndex += direction;
+
+    if(currentIndex < 0) currentIndex = 0;
+    if(currentIndex > totalCards - visibleCards) currentIndex = totalCards - visibleCards;
+
+    carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+}
+
+function filterProjects() {
+    const input = document.getElementById('search-input').value.toLowerCase();
+    const cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+        if(card.textContent.toLowerCase().includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+</body>
+</html>
