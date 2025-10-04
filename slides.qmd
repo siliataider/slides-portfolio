@@ -1,0 +1,55 @@
+---
+title: "ROOT Open Projects"
+format: revealjs
+---
+
+# ROOT Open Projects
+Opportunities for collaboration and contributions
+
+---
+
+## About this Portfolio
+- A collection of concrete and well-scoped open projects to attract contributions beyond the ROOT Core Team.  
+- Suitable for a variety of contributors: students, researchers, and developers.  
+
+---
+
+# Project 1: ROOT Project 1
+**Responsible:** Jane Doe  
+**Target:** Summer Student
+**ROOT Areas:** Python Interface, Data Analysis  
+**Duration:** 3 months  
+
+**Scope:**  
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
+
+**Skills:**  
+Python, statistics, data visualization  
+
+---
+
+# Project 2: ROOT Project 2
+**Responsible:** John Smith  
+**Target:** Master Thesis
+**ROOT Areas:** Compiler Technology, Continuous Integration  
+**Duration:** 6 months  
+
+**Scope:**  
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+
+**Skills:**  
+C++, compiler design, CI systems  
+
+---
+
+# Project 3: ROOT Project 3
+**Responsible:** Jean Dupont  
+**Target:** GSoC Student
+**ROOT Areas:** Machine Learning and AI, Visualisation and Graphics  
+**Duration:** 3 months  
+
+**Scope:**  
+Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
+
+**Skills:**  
+Machine learning, Python, graphics libraries  
