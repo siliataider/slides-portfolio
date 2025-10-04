@@ -1,6 +1,9 @@
 project:
   type: website
 
+resources:
+  - cards.html 
+  
 format:
   revealjs:
     theme: white
