@@ -29,6 +29,7 @@
     }
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="style.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -137,61 +138,64 @@
 <h1>ROOT Open Projects</h1>
 <p>Opportunities for collaboration and contributions</p>
 </section>
-<section id="about-this-portfolio" class="slide level2">
+<section id="about-this-portfolio" class="slide level2 center">
 <h2>About this Portfolio</h2>
 <ul>
-<li>A collection of concrete and well-scoped open projects to attract contributions beyond the ROOT Core Team.<br>
+<li class="fragment">A collection of concrete and well-scoped open projects to attract contributions beyond the ROOT Core Team.<br>
 </li>
-<li>Suitable for a variety of contributors: students, researchers, and developers.</li>
+<li class="fragment">Suitable for a variety of contributors: students, researchers, and developers.</li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 </section></section>
 <section>
-<section id="project-1-root-project-1" class="title-slide slide level1 center">
+<section id="project-1-root-project-1" class="title-slide slide level1 project-slide center">
 <h1>Project 1: ROOT Project 1</h1>
 <p><strong>Responsible:</strong> Jane Doe<br>
-<strong>Target:</strong> Summer Student <strong>ROOT Areas:</strong> Python Interface, Data Analysis<br>
+<strong>Target:</strong> Summer Student<br>
+<strong>ROOT Areas:</strong> Python Interface, Data Analysis<br>
 <strong>Duration:</strong> 3 months</p>
 <p><strong>Scope:</strong><br>
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.</p>
 <p><strong>Skills:</strong><br>
-Python, statistics, data visualization</p>
+<span class="skill-badge">Python</span> <span class="skill-badge">Statistics</span> <span class="skill-badge">Data Visualization</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 </section></section>
 <section>
-<section id="project-2-root-project-2" class="title-slide slide level1 center">
+<section id="project-2-root-project-2" class="title-slide slide level1 project-slide center">
 <h1>Project 2: ROOT Project 2</h1>
 <p><strong>Responsible:</strong> John Smith<br>
-<strong>Target:</strong> Master Thesis <strong>ROOT Areas:</strong> Compiler Technology, Continuous Integration<br>
+<strong>Target:</strong> Master Thesis<br>
+<strong>ROOT Areas:</strong> I/O, Continuous Integration<br>
 <strong>Duration:</strong> 6 months</p>
 <p><strong>Scope:</strong><br>
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.</p>
 <p><strong>Skills:</strong><br>
-C++, compiler design, CI systems</p>
+<span class="skill-badge">C++</span> <span class="skill-badge">HTTP</span> <span class="skill-badge">CI Systems</span></p>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 </section></section>
-<section id="project-3-root-project-3" class="title-slide slide level1 center">
+<section id="project-3-root-project-3" class="title-slide slide level1 project-slide center">
 <h1>Project 3: ROOT Project 3</h1>
 <p><strong>Responsible:</strong> Jean Dupont<br>
-<strong>Target:</strong> GSoC Student <strong>ROOT Areas:</strong> Machine Learning and AI, Visualisation and Graphics<br>
+<strong>Target:</strong> GSoC Student<br>
+<strong>ROOT Areas:</strong> Machine Learning and AI, Visualisation and Graphics<br>
 <strong>Duration:</strong> 3 months</p>
 <p><strong>Scope:</strong><br>
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.</p>
 <p><strong>Skills:</strong><br>
-Machine learning, Python, graphics libraries</p>
+<span class="skill-badge">Machine Learning</span> <span class="skill-badge">Python</span> <span class="skill-badge">Graphics Libraries</span></p>
 
 
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-
+<p><img src="assets/images/root_logo.png" style="height:30px;vertical-align:middle;margin-right:5px;"> <img src="assets/images/ep_sft_logo.png" style="height:50px;vertical-align:middle;margin-right:10px;"> <span style="color:white;">ROOT Open Projects | 2025</span></p>
 </div>
 </div></div>
 
@@ -216,7 +220,7 @@ Machine learning, Python, graphics libraries</p>
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -227,7 +231,7 @@ Machine learning, Python, graphics libraries</p>
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -273,7 +277,7 @@ Machine learning, Python, graphics libraries</p>
         disableLayout: false,
 
         // Vertical centering of slides
-        center: false,
+        center: true,
 
         // Enables touch navigation on devices with touch input
         touch: true,
