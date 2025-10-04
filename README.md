@@ -1,3 +1,7 @@
+> [!WARNING]  
+> **This is just a mock prototype!**  
+> The slides and projects shown here are **not official ROOT projects** and are for demonstration purposes only.
+
 # ROOT Open Projects Portfolio 🚀
 
 This repository contains an interactive slide deck showcasing the latest **ROOT Open Projects**, designed to attract contributions from students, researchers, and developers interested in collaborating with the ROOT Core Team.  
