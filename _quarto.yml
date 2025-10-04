@@ -4,6 +4,20 @@ project:
 format:
   revealjs:
     theme: white
+    css: style.css
+    incremental: true
+    center: true
+    widescreen: true
+    controls: true
+    progress: true
+    overview: true
+    touch: true
+    keyboard: true
+    slide-level: 2
     slide-number: true
     transition: fade
     hash: true
+    footer: |
+      <img src="assets/images/root_logo.png" style="height:30px;vertical-align:middle;margin-right:5px;">
+      <img src="assets/images/ep_sft_logo.png" style="height:50px;vertical-align:middle;margin-right:10px;">
+      <span style="color:white;">ROOT Open Projects | 2025</span>

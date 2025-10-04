@@ -14,37 +14,38 @@ Opportunities for collaboration and contributions
 
 ---
 
-# Project 1: ROOT Project 1
+# Project 1: ROOT Project 1 {.project-slide}
 **Responsible:** Jane Doe  
-**Target:** Summer Student
+**Target:** Summer Student  
 **ROOT Areas:** Python Interface, Data Analysis  
 **Duration:** 3 months  
+
 
 **Scope:**  
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
 
 **Skills:**  
-Python, statistics, data visualization  
+<span class="skill-badge">Python</span> <span class="skill-badge">Statistics</span> <span class="skill-badge">Data Visualization</span>
 
 ---
 
-# Project 2: ROOT Project 2
+# Project 2: ROOT Project 2 {.project-slide}
 **Responsible:** John Smith  
-**Target:** Master Thesis
-**ROOT Areas:** Compiler Technology, Continuous Integration  
+**Target:** Master Thesis  
+**ROOT Areas:** I/O, Continuous Integration  
 **Duration:** 6 months  
 
 **Scope:**  
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
 
 **Skills:**  
-C++, compiler design, CI systems  
+<span class="skill-badge">C++</span> <span class="skill-badge">HTTP</span> <span class="skill-badge">CI Systems</span>
 
 ---
 
-# Project 3: ROOT Project 3
+# Project 3: ROOT Project 3 {.project-slide}
 **Responsible:** Jean Dupont  
-**Target:** GSoC Student
+**Target:** GSoC Student  
 **ROOT Areas:** Machine Learning and AI, Visualisation and Graphics  
 **Duration:** 3 months  
 
@@ -52,4 +53,4 @@ C++, compiler design, CI systems
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. 
 
 **Skills:**  
-Machine learning, Python, graphics libraries  
+<span class="skill-badge">Machine Learning</span> <span class="skill-badge">Python</span> <span class="skill-badge">Graphics Libraries</span>
