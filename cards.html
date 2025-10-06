@@ -43,9 +43,15 @@
 
     .carousel-container {
         position: relative;
-        width: 90%;
+        width: 80%;
         margin: 0 auto 50px auto;
         overflow: visible;
+    }
+
+    @media (min-width: 1600px) {
+    .carousel-container {
+        width: 60%;
+    }
     }
 
     .carousel {
@@ -114,11 +120,11 @@
     }
 
     .carousel-btn.left {
-        left: -50px;
+        left: -60px;
     }
 
     .carousel-btn.right {
-        right: -50px;
+        right: -60px;
     }
 
     footer {
