@@ -45,7 +45,7 @@
         position: relative;
         width: 90%;
         margin: 0 auto 50px auto;
-        overflow: hidden;
+        overflow: visible;
     }
 
     .carousel {
@@ -114,11 +114,11 @@
     }
 
     .carousel-btn.left {
-        left: 10px;
+        left: -50px;
     }
 
     .carousel-btn.right {
-        right: 10px;
+        right: -50px;
     }
 
     footer {
@@ -139,6 +139,34 @@
         margin-right: 10px;
     }
 
+    .scope-text {
+        display: inline-block;
+        max-height: 10em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        position: relative;
+        transition: max-height 0.3s ease;
+    }
+
+    .scope-text.expanded {
+        max-height: 100em;
+    }
+
+    .read-more-btn {
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 5px;
+    }
+
+    .read-more-btn:hover {
+        text-decoration: underline;
+    }
+
 </style>
 </head>
 <body>
@@ -157,50 +185,48 @@
 
     <div class="carousel" id="carousel">
         <div class="project-card">
-            <h2>ROOT Project 1</h2>
+            <h2>S3 Backend for RNTuple</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Jane Doe</p>
-                <p><strong>Target:</strong> Summer Student</p>
-                <p><strong>ROOT Areas:</strong> Python Interface, Data Analysis</p>
-                <p><strong>Duration:</strong> 3 months</p>
+                <p><strong>Responsible:</strong> Jakob Blomer</p>
+                <p><strong>Target:</strong> Master Thesis / Tech / ATLAS Quali Task</p>
+                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong>Duration:</strong> 6-12 months</p>
             </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
-            <p><strong>Skills:</strong> 
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Statistics</span>
-                <span class="skill-badge">Data Visualization</span>
-            </p>
-        </div>
-
-        <div class="project-card">
-            <h2>ROOT Project 2</h2>
-            <div class="project-meta">
-                <p><strong>Responsible:</strong> John Smith</p>
-                <p><strong>Target:</strong> Master Thesis</p>
-                <p><strong>ROOT Areas:</strong> I/O, Continuous Integration</p>
-                <p><strong>Duration:</strong> 6 months</p>
-            </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p class="scope-text"><strong>Scope:</strong> The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. It has been designed to allow for exchangeable storage backends, including file system access, XRootD access, and object stores. Proof-of-concept implementations for DAOS and S3 object stores exist but have not been further pursued. The goal of this project is to develop a robust (pre-release quality) implementation for storing RNTuple data in S3, the standard cloud storage protocol. In particular, the project needs to design and implement a URL scheme to address RNTuple objects and an efficient HTTP base layer to access objects and byte ranges. The project should include benchmarks comparing S3 to XRootD and remote file system access in the same data center (e.g., using the AGC benchmark), and a benchmark measuring the effect of network latency to end-to-end performance.</p>
+            <button class="read-more-btn">... Read more</button>
             <p><strong>Skills:</strong> 
                 <span class="skill-badge">C++</span>
                 <span class="skill-badge">HTTP</span>
-                <span class="skill-badge">CI Systems</span>
             </p>
         </div>
 
         <div class="project-card">
-            <h2>ROOT Project 3</h2>
+            <h2>Graceful crash recovery of RNTuple write streams</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Jean Dupont</p>
-                <p><strong>Target:</strong> GSoC Student</p>
-                <p><strong>ROOT Areas:</strong> Machine Learning and AI, Visualisation and Graphics</p>
-                <p><strong>Duration:</strong> 3 months</p>
+                <p><strong>Responsible:</strong> Jakob Blomer</p>
+                <p><strong>Target:</strong> Master Thesis / Tech</p>
+                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong>Duration:</strong> 12 months</p>
             </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p class="scope-text"><strong>Scope:</strong> The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. Its current use include analysis and reconstruction workflows, with some early prototyping of data acquisition use cases. For data acquisition in particular, where failing jobs cannot simply be restarted, the capability to recover written data after an unexpected termination of the writer process is critical. The RNTuple design allows for that feature provided that a snapshot of the meta-data (the on-disk location of pages) is regularly flushed to disk (not only at the end). The project should design and implement a mechanism to automatically flush a consistent state of the meta-data during writing at a location that can be located after a crash (e.g., a well-known byte offset such as every 100MB). An extensive test suite should be developed alongside the feature.</p>
+            <button class="read-more-btn">... Read more</button>
             <p><strong>Skills:</strong> 
-                <span class="skill-badge">Machine Learning</span>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">Graphics Libraries</span>
+                <span class="skill-badge">C++</span>
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h2>Abstract Object Access in ROOT Schema Evolution</h2>
+            <div class="project-meta">
+                <p><strong>Responsible:</strong> Jakob Blomer</p>
+                <p><strong>Target:</strong> Grad</p>
+                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong>Duration:</strong> 18-24 months</p>
+            </div>
+            <p class="scope-text"><strong>Scope:</strong> The ROOT schema evolution system enables users to define I/O customization rules that map on-disk types to their evolved versions in-memory. A limitation of the current approach is the fact that the on-disk information (e.g., class members) need to be accessed in the form of existing C++ types. Effectively, that may require users of complex event data models to preserve the history of the class layouts. This project aims at developing an extension to the ROOT schema evolution that allows access to on-disk classes in an abstract way, as a combination of PoDs, abstract records and abstract collections. As a result, certain schema evolution cases related to the change of class shapes (e.g., moving data members in the class hierarchy) should be greatly simplified.</p>
+            <button class="read-more-btn">... Read more</button>
+            <p><strong>Skills:</strong> 
+                <span class="skill-badge">C++</span>
             </p>
         </div>
 
@@ -212,7 +238,8 @@
                 <p><strong>ROOT Areas:</strong> Documentation, Teaching</p>
                 <p><strong>Duration:</strong> 1 month</p>
             </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            <button class="read-more-btn">... Read more</button>
             <p><strong>Skills:</strong> 
                 <span class="skill-badge">Writing</span>
                 <span class="skill-badge">Python</span>
@@ -227,9 +254,10 @@
                 <p><strong>ROOT Areas:</strong> Distributed Systems</p>
                 <p><strong>Duration:</strong> 6 months</p>
             </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            <button class="read-more-btn">... Read more</button>
             <p><strong>Skills:</strong> 
-                <span class="skill-badge">Networking</span>
+                <span class="skill-badge">Python</span>
                 <span class="skill-badge">C++</span>
             </p>
         </div>
@@ -242,7 +270,8 @@
                 <p><strong>ROOT Areas:</strong> Machine Learning, Data Analysis</p>
                 <p><strong>Duration:</strong> 3 years</p>
             </div>
-            <p><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat.</p>
+            <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
+            <button class="read-more-btn">... Read more</button>
             <p><strong>Skills:</strong> 
                 <span class="skill-badge">Python</span>
                 <span class="skill-badge">ML</span>
@@ -260,6 +289,16 @@
     <img src="assets/images/ep_sft_logo.png" alt="EP-SFT Logo"  style= "height: 50px;" class="ep-logo">
     <span>ROOT Open Projects | 2025</span>
 </footer>
+
+<script>
+document.querySelectorAll('.read-more-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const scopeText = button.previousElementSibling;
+    scopeText.classList.toggle('expanded');
+    button.textContent = scopeText.classList.contains('expanded') ? '... Read less' : '... Read more';
+  });
+});
+</script>
 
 <script>
 let currentIndex = 0;
