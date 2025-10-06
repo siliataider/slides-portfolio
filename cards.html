@@ -7,7 +7,7 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #326096ff;
+        background: linear-gradient(135deg, #396699, #183353);
         color: #FFFFFF;
         margin: 0;
         padding: 0;
@@ -69,23 +69,28 @@
 
     .project-card {
         flex: 0 0 31%;
-        background-color: rgba(255,255,255,0.1);
+        background: rgba(255,255,255,0.1);
         border-radius: 12px;
         padding: 20px;
         box-sizing: border-box;
         min-height: 300px;
-        transition: transform 0.2s;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .project-card:hover {
         transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
 
     .project-card h2 {
         font-size: 1.5em;
         margin-top: 0;
         margin-bottom: 0.5em;
-        color: #FFD700;
+        color: #7CFF6D;
+        background: linear-gradient(90deg, #00E5FF, #7CFF6D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .project-meta p {
@@ -113,6 +118,11 @@
         white-space: nowrap;
     }
 
+    .skill-badge:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s;
+    }
+
     .carousel-btn {
         position: absolute;
         top: 50%;
@@ -124,6 +134,10 @@
         padding: 0 10px;
         cursor: pointer;
         z-index: 100;
+        background-color: #00B3C7;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+
     }
 
     .carousel-btn.left {
@@ -169,7 +183,7 @@
     .read-more-btn {
         background: none;
         border: none;
-        color: #ffffff;
+        color: #00E5FF;
         font-weight: bold;
         cursor: pointer;
         padding: 0;
@@ -180,6 +194,17 @@
         text-decoration: underline;
     }
 
+    .metadata {
+        color: #E0E0E0;
+    }
+
+    .emoji-gradient {
+        background: linear-gradient(90deg, #00E5FF, #7CFF6D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
 </style>
 </head>
 <body>
@@ -200,10 +225,10 @@
         <div class="project-card">
             <h2>S3 Backend for RNTuple</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Jakob Blomer</p>
-                <p><strong>Target:</strong> Master Thesis / Tech / ATLAS Quali Task</p>
-                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
-                <p><strong>Duration:</strong> 6-12 months</p>
+                <p><strong class="metadata"> Responsible:</strong> Jakob Blomer</p>
+                <p><strong class="metadata"> Target:</strong> Master Thesis / Tech / ATLAS Quali Task</p>
+                <p><strong class="metadata"> ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 6-12 months</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. It has been designed to allow for exchangeable storage backends, including file system access, XRootD access, and object stores. Proof-of-concept implementations for DAOS and S3 object stores exist but have not been further pursued. The goal of this project is to develop a robust (pre-release quality) implementation for storing RNTuple data in S3, the standard cloud storage protocol. In particular, the project needs to design and implement a URL scheme to address RNTuple objects and an efficient HTTP base layer to access objects and byte ranges. The project should include benchmarks comparing S3 to XRootD and remote file system access in the same data center (e.g., using the AGC benchmark), and a benchmark measuring the effect of network latency to end-to-end performance.</p>
             <button class="read-more-btn">... Read more</button>
@@ -216,10 +241,10 @@
         <div class="project-card">
             <h2>Graceful crash recovery of RNTuple write streams</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Jakob Blomer</p>
-                <p><strong>Target:</strong> Master Thesis / Tech</p>
-                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
-                <p><strong>Duration:</strong> 12 months</p>
+                <p><strong class="metadata"> Responsible:</strong> Jakob Blomer</p>
+                <p><strong class="metadata"> Target:</strong> Master Thesis</p>
+                <p><strong class="metadata"> ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 12 months</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. Its current use include analysis and reconstruction workflows, with some early prototyping of data acquisition use cases. For data acquisition in particular, where failing jobs cannot simply be restarted, the capability to recover written data after an unexpected termination of the writer process is critical. The RNTuple design allows for that feature provided that a snapshot of the meta-data (the on-disk location of pages) is regularly flushed to disk (not only at the end). The project should design and implement a mechanism to automatically flush a consistent state of the meta-data during writing at a location that can be located after a crash (e.g., a well-known byte offset such as every 100MB). An extensive test suite should be developed alongside the feature.</p>
             <button class="read-more-btn">... Read more</button>
@@ -231,10 +256,10 @@
         <div class="project-card">
             <h2>Abstract Object Access in ROOT Schema Evolution</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Jakob Blomer</p>
-                <p><strong>Target:</strong> Grad</p>
-                <p><strong>ROOT Areas:</strong> RNTuple, I/O</p>
-                <p><strong>Duration:</strong> 18-24 months</p>
+                <p><strong class="metadata">Responsible:</strong> Jakob Blomer</p>
+                <p><strong class="metadata">Target:</strong> Grad</p>
+                <p><strong class="metadata">ROOT Areas:</strong> RNTuple, I/O</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 18-24 months</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> The ROOT schema evolution system enables users to define I/O customization rules that map on-disk types to their evolved versions in-memory. A limitation of the current approach is the fact that the on-disk information (e.g., class members) need to be accessed in the form of existing C++ types. Effectively, that may require users of complex event data models to preserve the history of the class layouts. This project aims at developing an extension to the ROOT schema evolution that allows access to on-disk classes in an abstract way, as a combination of PoDs, abstract records and abstract collections. As a result, certain schema evolution cases related to the change of class shapes (e.g., moving data members in the class hierarchy) should be greatly simplified.</p>
             <button class="read-more-btn">... Read more</button>
@@ -246,10 +271,10 @@
         <div class="project-card">
             <h2>ROOT Project 4</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Alice Martin</p>
-                <p><strong>Target:</strong> Bachelor Thesis</p>
-                <p><strong>ROOT Areas:</strong> Documentation, Teaching</p>
-                <p><strong>Duration:</strong> 1 month</p>
+                <p><strong class="metadata">Responsible:</strong> Alice Martin</p>
+                <p><strong class="metadata">Target:</strong> Bachelor Thesis</p>
+                <p><strong class="metadata">ROOT Areas:</strong> Documentation, Teaching</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 1 month</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
             <button class="read-more-btn">... Read more</button>
@@ -262,10 +287,10 @@
         <div class="project-card">
             <h2>ROOT Project 5</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Bob Lee</p>
-                <p><strong>Target:</strong> CERN Trainee</p>
-                <p><strong>ROOT Areas:</strong> Distributed Systems</p>
-                <p><strong>Duration:</strong> 6 months</p>
+                <p><strong class="metadata">Responsible:</strong> Bob Lee</p>
+                <p><strong class="metadata">Target:</strong> CERN Trainee</p>
+                <p><strong class="metadata">ROOT Areas:</strong> Distributed Systems</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 6 months</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
             <button class="read-more-btn">... Read more</button>
@@ -278,10 +303,10 @@
         <div class="project-card">
             <h2>ROOT Project 6</h2>
             <div class="project-meta">
-                <p><strong>Responsible:</strong> Carol Smith</p>
-                <p><strong>Target:</strong> PhD</p>
-                <p><strong>ROOT Areas:</strong> Machine Learning, Data Analysis</p>
-                <p><strong>Duration:</strong> 3 years</p>
+                <p><strong class="metadata">Responsible:</strong> Carol Smith</p>
+                <p><strong class="metadata">Target:</strong> PhD</p>
+                <p><strong class="metadata">ROOT Areas:</strong> Machine Learning, Data Analysis</p>
+                <p><strong class="metadata"><span class="emoji-gradient">⏱</span> Duration:</strong> 3 years</p>
             </div>
             <p class="scope-text"><strong>Scope:</strong> Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.</p>
             <button class="read-more-btn">... Read more</button>
