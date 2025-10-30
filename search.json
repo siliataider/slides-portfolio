@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ROOT Open Projects",
+    "section": "",
+    "text": "All Areas Statistical interpretation Python Interface Documentation and outreach Compiler technology Automation Machine Learning and Artificial Intelligence Teaching Continuous integration and build system RNew platforms Type system and reflection Data analysis Distributed systems Visualisation and graphics \n All Skills C++ Python Machine Learning ROOT \n All Durations ≤ 6 months 6–12 months &gt; 12 months \n\n\n\n\n\nRNTuple & I/O\n\n\n\n\nS3 Backend for RNTuple\n\n\nC++ HTTP\n\n\n6-12 months\n\n\n\n\nGraceful crash recovery of RNTuple write streams\n\n\nC++\n\n\n12 months\n\n\n\n\nAbstract Object Access in ROOT Schema Evolution\n\n\nC++\n\n\n18-24 months\n\n\n\n\n\n\nPython Interface\n\n\n\n\nProject Title 1\n\n\nPython ML\n\n\n6 months\n\n\n\n\nProject Title 2\n\n\nPython C++\n\n\n18-24 months\n\n\n\n\n\n\nInfrastructure & Build System\n\n\n\n\nProject Title 3\n\n\nCMake git\n\n\n18-24 months\n\n\n\n\nProject Title 4\n\n\nJenkins Python\n\n\n6 months\n\n\n\n\n\n\nContribute a Project Idea\n\n\nIf you have an idea for a ROOT project, submit it here!\n\n\nName \nEmail \nProject Idea\n\n\nSubmit\n\n\n\n\n\n\n  ROOT Open Projects | 2025"
+  },
+  {
     "objectID": "slides.html#about-this-portfolio",
     "href": "slides.html#about-this-portfolio",
     "title": "ROOT Open Projects",
