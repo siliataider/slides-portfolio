@@ -1,0 +1,16 @@
+---
+title: ROOT Open Projects
+subtitle: Opportunities for collaboration and contributions
+date: 10-10-2025
+date-format: short
+date-modified: 30-10-2025
+format:
+  html:
+    embed-resources: true
+    css: css/style.css
+    script: js/script.js
+    allow-html: true
+url: /projects/
+---
+
+{{< include html/cards.html >}}

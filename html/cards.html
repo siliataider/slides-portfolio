@@ -1,0 +1,190 @@
+<div id="search-container">
+<input type="text" id="search-input" placeholder="Search by keyword (e.g., Python, ML, I/O)" onkeyup="filterProjects()">
+</div>
+
+<div id="filter-bar">
+<select id="filter-area" onchange="filterProjects()">
+    <option value="">All Areas</option>
+    <option value="Statistical">Statistical interpretation</option>
+    <option value="Python">Python Interface</option>
+    <option value="Documentation">Documentation and outreach</option>
+    <option value="Compiler">Compiler technology</option>
+    <option value="Automation">Automation</option>
+    <option value="Machine">Machine Learning and Artificial Intelligence</option>
+    <option value="Teaching">Teaching</option>
+    <option value="build">Continuous integration and build system</option>
+    <option value="platforms">RNew platforms</option>
+    <option value="reflection">Type system and reflection</option>
+    <option value="Data">Data analysis</option>
+    <option value="Distributed">Distributed systems</option>
+    <option value="Visualisation">Visualisation and graphics</option>
+</select>
+
+<select id="filter-skill" onchange="filterProjects()">
+    <option value="">All Skills</option>
+    <option value="C++">C++</option>
+    <option value="Python">Python</option>
+    <option value="ML">Machine Learning</option>
+    <option value="C++">ROOT</option>
+</select>
+
+<select id="filter-duration" onchange="filterProjects()">
+    <option value="">All Durations</option>
+    <option value="short">≤ 6 months</option>
+    <option value="medium">6–12 months</option>
+    <option value="long">> 12 months</option>
+</select>
+</div>
+
+
+<main class="project-section">
+<!-- ================================== -->
+
+<section class="root-area">
+<h2 class="area-title">RNTuple & I/O</h2>
+<div class="project-grid">
+
+<div class="project-card">
+<h3>S3 Backend for RNTuple</h3>
+<div class="skills">
+<span class="skill-badge">C++</span>
+<span class="skill-badge">HTTP</span>
+</div>
+<p class="duration">6-12 months</p>
+</div>
+
+<div class="project-card">
+<h3>Graceful crash recovery of RNTuple write streams</h3>
+<div class="skills">
+<span class="skill-badge">C++</span>
+</div>
+<p class="duration">12 months</p>
+</div>
+
+<div class="project-card">
+<h3>Abstract Object Access in ROOT Schema Evolution</h3>
+<div class="skills">
+<span class="skill-badge">C++</span>
+</div>
+<p class="duration">18-24 months</p>
+</div>
+</section>
+
+<!-- ================================== -->
+
+<section class="root-area">
+<h2 class="area-title">Python Interface</h2>
+<div class="project-grid">
+<div class="project-card">
+<h3>Project Title 1</h3>
+<div class="skills">
+<span class="skill-badge">Python</span>
+<span class="skill-badge">ML</span>
+</div>
+<p class="duration">6 months</p>
+</div>
+
+<div class="project-card">
+<h3>Project Title 2</h3>
+<div class="skills">
+<span class="skill-badge">Python</span>
+<span class="skill-badge">C++</span>
+</div>
+<p class="duration">18-24 months</p>
+</div>
+</section>
+
+<!-- ================================== -->
+
+<section class="root-area">
+<h2 class="area-title">Infrastructure & Build System</h2>
+<div class="project-grid">
+<div class="project-card">
+<h3>Project Title 3</h3>
+<div class="skills">
+<span class="skill-badge">CMake</span>
+<span class="skill-badge">git</span>
+</div>
+<p class="duration">18-24 months</p>
+</div>
+
+<div class="project-card">
+<h3>Project Title 4</h3>
+<div class="skills">
+<span class="skill-badge">Jenkins</span>
+<span class="skill-badge">Python</span>
+</div>
+<p class="duration">6 months</p>
+</div>
+</section>
+
+<!-- ================================== -->
+
+<section id="contact" class="contact-section">
+<h2>Contribute a Project Idea</h2>
+<p>If you have an idea for a ROOT project, submit it here!</p>
+
+<form id="contact-form" action="I_will_fill_it_at_some_point" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your name">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required placeholder="Danilo.Piparo@cern.ch">
+
+    <label for="project">Project Idea</label>
+    <textarea id="project" name="project" rows="5" required placeholder="Describe your project"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+</section>
+
+</main>
+
+<script>
+function filterProjects() {
+    const keyword = document.getElementById("search-input")?.value.toLowerCase() || "";
+    const areaFilter = document.getElementById("filter-area")?.value.toLowerCase() || "";
+    const skillFilter = document.getElementById("filter-skill")?.value.toLowerCase() || "";
+    const durationFilter = document.getElementById("filter-duration")?.value || "";
+
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach(card => {
+        const title = card.querySelector("h3")?.textContent.toLowerCase() || "";
+        const skills = Array.from(card.querySelectorAll(".skill-badge"))
+                            .map(b => b.textContent.toLowerCase());
+        const duration = card.querySelector(".duration")?.textContent.toLowerCase() || "";
+        const areaSection = card.closest(".root-area")?.querySelector("h2")?.textContent.toLowerCase() || "";
+
+        let visible = true;
+
+        if (keyword && !title.includes(keyword) &&
+            !skills.some(s => s.includes(keyword))) visible = false;
+        if (areaFilter && !areaSection.includes(areaFilter)) visible = false;
+        if (skillFilter && !skills.includes(skillFilter)) visible = false;
+
+        if (durationFilter) {
+            if (durationFilter === "short" && !duration.includes("3–6")) visible = false;
+            if (durationFilter === "medium" && !duration.includes("6–12")) visible = false;
+            if (durationFilter === "long" && !duration.match(/12|18|24/)) visible = false;
+        }
+
+        card.style.display = visible ? "block" : "none";
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+    });
+});
+</script>
+
+
+<footer>
+    <img src="assets/images/root_logo.png" alt="ROOT Logo" style="height: 30px;">
+    <img src="assets/images/ep_sft_logo.png" alt="EP-SFT Logo" style="height: 50px;">
+    <span>ROOT Open Projects | 2025</span>
+</footer>
