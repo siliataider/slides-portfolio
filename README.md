@@ -2,6 +2,11 @@
 > **This is just a mock prototype!**  
 > The slides and projects shown here are **not official ROOT projects** and are for demonstration purposes only.
 
+# Versions
+- Options 1: https://siliataider.github.io/slides-portfolio/
+- Option 2: https://siliataider.github.io/slides-portfolio/cards.html
+- Option 3: https://siliataider.github.io/slides-portfolio/slides.html
+
 # ROOT Open Projects Portfolio 🚀
 
 This repository contains an interactive slide deck showcasing the latest **ROOT Open Projects**, designed to attract contributions from students, researchers, and developers interested in collaborating with the ROOT Core Team.  
