@@ -2,7 +2,7 @@
 <input type="text" id="search-input" placeholder="Search by keyword (e.g., Python, ML, I/O)" onkeyup="filterProjects()">
 </div>
 
-<div id="filter-bar">
+<!-- <div id="filter-bar">
 <select id="filter-area" onchange="filterProjects()">
     <option value="">All Areas</option>
     <option value="Statistical">Statistical interpretation</option>
@@ -34,7 +34,7 @@
     <option value="medium">6–12 months</option>
     <option value="long">> 12 months</option>
 </select>
-</div>
+</div> -->
 
 
 <main class="project-section">
@@ -50,9 +50,9 @@
 <span class="skill-badge">C++</span>
 <span class="skill-badge">HTTP</span>
 </div>
+<p class="responsible"><strong>Responsible:</strong> Jakob Blomer</p>
+<p class="target"><strong>Target:</strong>Master Thesis / Tech / ATLAS Quali Task (perhaps related to ATLAS cloud R&D)</p>
 <p class="duration">6-12 months</p>
-<p class="responsible" style="display:none;">Jakob Blomer</p>
-<p class="target" style="display:none;">Master Thesis / Tech / ATLAS Quali Task (perhaps related to ATLAS cloud R&D)</p>
 <p class="areas" style="display:none;">RNTuple, I/O</p>
 <p class="scope" style="display:none;">The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. It has been designed to allow for exchangeable storage backends, including file system access, XRootD access, and object stores. Proof-of-concept implementations for DAOS and S3 object stores exist but have not been further pursued. The goal of this project is to develop a robust (pre-release quality) implementation for storing RNTuple data in S3, the standard cloud storage protocol. In particular, the project needs to design and implement a URL scheme to address RNTuple objects and an efficient HTTP base layer to access objects and byte ranges. The project should include benchmarks comparing S3 to XRootD and remote file system access in the same data center (e.g., using the AGC benchmark), and a benchmark measuring the effect of network latency to end-to-end performance</p>
 
@@ -63,10 +63,9 @@
 <div class="skills">
 <span class="skill-badge">C++</span>
 </div>
+<p class="responsible"><strong>Responsible:</strong> Jakob Blomer</p>
+<p class="target"><strong>Target:</strong> Master Thesis / Tech</p>
 <p class="duration">12 months</p>
-<p class="duration">6-12 months</p>
-<p class="responsible" style="display:none;">Jakob Blomer</p>
-<p class="target" style="display:none;">Master Thesis / Tech</p>
 <p class="areas" style="display:none;">RNTuple, I/O</p>
 <p class="scope" style="display:none;">The RNTuple I/O provides the data format and basic storage stack for HL-LHC data. Its current use include analysis and reconstruction workflows, with some early prototyping of data acquisition use cases. For data acquisition in particular, where failing jobs cannot simply be restarted, the capability to recover written data after an unexpected termination of the writer process is critical. The RNTuple design allows for that feature provided that a snapshot of the meta-data (the on-disk location of pages) is regularly flushed to disk (not only at the end). The project should design and implement a mechanism to automatically flush a consistent state of the meta-data during writing at a location that can be located after a crash (e.g., a well-known byte offset such as every 100MB). An extensive test suite should be developed alongside the feature.</p>
 
@@ -77,9 +76,9 @@
 <div class="skills">
 <span class="skill-badge">C++</span>
 </div>
+<p class="responsible"><strong>Responsible:</strong> Jakob Blomer</p>
+<p class="target"><strong>Target:</strong> Grad</p>
 <p class="duration">18-24 months</p>
-<p class="responsible" style="display:none;">Jakob Blomer</p>
-<p class="target" style="display:none;">Grad</p>
 <p class="areas" style="display:none;">RNTuple, I/O</p>
 <p class="scope" style="display:none;">The ROOT schema evolution system enables users to define I/O customization rules that map on-disk types to their evolved versions in-memory. A limitation of the current approach is the fact that the on-disk information (e.g., class members) need to be accessed in the form of existing C++ types. Effectively, that may require users of complex event data models to preserve the history of the class layouts. This project aims at developing an extension to the ROOT schema evolution that allows access to on-disk classes in an abstract way, as a combination of PoDs, abstract records and abstract collections. As a result, certain schema evolution cases related to the change of class shapes (e.g., moving data members in the class hierarchy) should be greatly simplified.</p>
 
@@ -88,7 +87,7 @@
 </section>
 
 <!-- ================================== -->
-
+<!-- 
 <section class="root-area">
 <h2 class="area-title">Python Interface</h2>
 <div class="project-grid">
@@ -112,8 +111,6 @@
 </div>
 </section>
 
-<!-- ================================== -->
-
 <section class="root-area">
 <h2 class="area-title">Infrastructure & Build System</h2>
 <div class="project-grid">
@@ -135,12 +132,14 @@
 <p class="duration">6 months</p>
 </div>
 </div>
-</section>
+</section> -->
 
 <!-- ================================== -->
+<section class="root-area">
+<h2 class="area-title">Contact Us</h2>
 
 <section id="contact" class="contact-section">
-<h2>Contribute a Project Idea</h2>
+<h2>Contribute a Project Idea!</h2>
 <p>If you have an idea for a ROOT project, submit it here!</p>
 
 <form id="contact-form" action="I_will_fill_it_at_some_point" method="POST">
@@ -156,7 +155,8 @@
     <button type="submit">Submit</button>
 </form>
 </section>
-
+</div>
+</section>
 
 <!-- ================================== -->
 
@@ -234,8 +234,8 @@ document.querySelectorAll(".project-card").forEach(card => {
     modalTitle.textContent = card.querySelector("h3")?.textContent || "";
     modalSkills.innerHTML = card.querySelector(".skills")?.innerHTML || "";
     modalDuration.textContent = card.querySelector(".duration").textContent;
-    modalResponsible.textContent = "Responsible: " + (card.querySelector(".responsible")?.textContent || "");
-    modalTarget.textContent = "Target: " + (card.querySelector(".target")?.textContent || "");
+    modalResponsible.innerHTML = card.querySelector(".responsible")?.innerHTML || "";
+    modalTarget.innerHTML = card.querySelector(".target")?.innerHTML || "";
     modalAreas.textContent = "ROOT Areas: " + (card.querySelector(".areas")?.textContent || "");
     modalScope.textContent = "Scope: " + (card.querySelector(".scope")?.textContent || "");
 
@@ -251,7 +251,7 @@ window.onclick = e => { if (e.target == modal) modal.style.display = "none"; }
 
 
 <footer>
-    <img src="assets/images/root_logo_cyan.png" alt="ROOT Logo" style="height: 30px;">
-    <img src="assets/images/ep_sft_logo_bleu.png" alt="EP-SFT Logo" style="height: 150px;">
+    <img src="assets/images/root_logo.png" alt="ROOT Logo" style="height: 30px;">
+    <img src="assets/images/ep_sft_logo.png" alt="EP-SFT Logo" style="height: 60px;">
     <span>ROOT Open Projects | 2025</span>
 </footer>
