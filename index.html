@@ -3858,7 +3858,8 @@ background-color: #e0f7ff;
 box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 .project-section {
-width: 80vw; margin: 0; padding: 0; position: relative; left: 50%; right: 50%; transform: translateX(-50%); }
+width: 50vw;
+margin: 0; padding: 0; position: relative; left: 50%; right: 50%; transform: translateX(-50%); }
 .root-area {
 margin-top: 40px;
 }
@@ -4144,39 +4145,11 @@ text-align: left;
 <div id="search-container">
 <p><input type="text" id="search-input" placeholder="Search by keyword (e.g., Python, ML, I/O)" onkeyup="filterProjects()"></p>
 </div>
-<!-- <div id="filter-bar">
-<select id="filter-area" onchange="filterProjects()">
-    <option value="">All Areas</option>
-    <option value="Statistical">Statistical interpretation</option>
-    <option value="Python">Python Interface</option>
-    <option value="Documentation">Documentation and outreach</option>
-    <option value="Compiler">Compiler technology</option>
-    <option value="Automation">Automation</option>
-    <option value="Machine">Machine Learning and Artificial Intelligence</option>
-    <option value="Teaching">Teaching</option>
-    <option value="build">Continuous integration and build system</option>
-    <option value="platforms">RNew platforms</option>
-    <option value="reflection">Type system and reflection</option>
-    <option value="Data">Data analysis</option>
-    <option value="Distributed">Distributed systems</option>
-    <option value="Visualisation">Visualisation and graphics</option>
-</select>
-
-<select id="filter-skill" onchange="filterProjects()">
-    <option value="">All Skills</option>
-    <option value="C++">C++</option>
-    <option value="Python">Python</option>
-    <option value="ML">Machine Learning</option>
-    <option value="C++">ROOT</option>
-</select>
-
-<select id="filter-duration" onchange="filterProjects()">
-    <option value="">All Durations</option>
-    <option value="short">≤ 6 months</option>
-    <option value="medium">6–12 months</option>
-    <option value="long">> 12 months</option>
-</select>
-</div> -->
+<div id="filter-bar">
+<p><select id="filter-area" onchange="filterProjects()"> <option value>All Areas</option> <option value="Statistical">Statistical interpretation</option> <option value="Python">Python Interface</option> <option value="Documentation">Documentation and outreach</option> <option value="Compiler">Compiler technology</option> <option value="Automation">Automation</option> <option value="Machine">Machine Learning and Artificial Intelligence</option> <option value="Teaching">Teaching</option> <option value="build">Continuous integration and build system</option> <option value="platforms">RNew platforms</option> <option value="reflection">Type system and reflection</option> <option value="Data">Data analysis</option> <option value="Distributed">Distributed systems</option> <option value="Visualisation">Visualisation and graphics</option> </select></p>
+<p><select id="filter-skill" onchange="filterProjects()"> <option value>All Skills</option> <option value="C++">C++</option> <option value="Python">Python</option> <option value="ML">Machine Learning</option> <option value="C++">ROOT</option> </select></p>
+<p><select id="filter-duration" onchange="filterProjects()"> <option value>All Durations</option> <option value="short">≤ 6 months</option> <option value="medium">6–12 months</option> <option value="long">&gt; 12 months</option> </select></p>
+</div>
 <main class="project-section">
 <!-- ================================== -->
 <section class="root-area">
@@ -4316,7 +4289,7 @@ If you have an idea for a ROOT project, submit it here!
 </p>
 <form id="contact-form" action="mailto:silia.taider@cern.ch" method="POST" enctype="text/plain">
 <p><label for="name">Name</label> <input type="text" id="name" name="name" required placeholder="Your name"></p>
-<p><label for="email">Email</label> <input type="email" id="email" name="_replyto" required placeholder="Danilo.Piparo@cern.ch"></p>
+<p><label for="email">Email</label> <input type="email" id="email" name="_replyto" required placeholder="example@domain.com"></p>
 <label for="project">Project Idea</label>
 <textarea id="project" name="project" rows="5" required placeholder="Describe your project"></textarea>
 <button type="submit">
